@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html
+	style="height: 604px; font: message-box; font-family: monospace; color: black;"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta content="width=device-width" name="viewport" />
+<title>Lista de Convidados</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" />
+</head>
+<body bgcolor="#fbf5ef" style="height: 567px;">
+	<div align="center" class="panel panel-default" style="margin: 10px;">
+		<div class="panel-heading">
+			<h1 class="panel-title">Repositorio de Projectos</h1>
+		</div>
+	</div>
+
+	<form class="form-inline" method="POST" style="margin: 20px 0px; height: 277px;" >
+
+
+		<div align="center" class="form-group">
+			<table border="1" style="width: 80%; height: 137px">
+				<thead >
+					<tr >
+						<th>Nr</th>
+						<th>Dono</th>
+						<th>Parceiros</th>
+						<th>Orcamento</th>
+						<th>Estado</th>
+						<th>Data de Inicio</th>
+						<th>Duracao</th>
+						<th>Sector</th>
+						<th>Tipo de Projecto</th>
+						<th>Descricao</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="Projecto : ${Projecto}">
+						<td th:text="${Projecto.numero}"></td>
+						<td th:text="${Projecto.responsavel}"></td>
+						<td th:text="${Projecto.parceitros}"></td>
+						<td th:text="${Projecto.orcamento}"></td>
+						<td th:text="${Projecto.estado}"></td>
+						<td th:text="${Projecto.dataInicio}"></td>
+						<td th:text="${Projecto.mesesDuracao}"></td>
+						<td th:text="${Projecto.sector}"></td>
+						<td th:text="${Projecto.tipoProjecto}"></td>
+						<td th:text="${Projecto.descricao}"></td>
+
+					</tr>
+				</tbody>
+
+
+			</table>
+		</div>
+
+	</form>
+</body>
+</html>

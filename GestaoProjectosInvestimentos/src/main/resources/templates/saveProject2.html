@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html
+	style="height: 604px; font: message-box; font-family: monospace; color: black;"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta content="width=device-width" name="viewport" />
+<title>Registo de Projectos</title>
+
+
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	href="mystyles.css" />
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" />
+</head>
+<body  style="height: 567px;">
+
+	<div class="panel panel-default" style="margin: 10px;">
+		<div class="panel-heading">
+			<h1 class="panel-title">Repositorio de Projectos</h1>
+		</div>
+	</div>
+
+	<form class="form-inline" th:object="${projecto}"
+		th:action="@{/Projecto}" method="POST"
+		style="margin: 20px 0px; height: 277px;">
+
+		<div class="form-group">
+			<textarea placeholder="Dono do Projecto" th:field="*{responsavel}"
+				style="width: 414px; height: 25px"></textarea>
+		</div>
+		</div>
+		<div class="form-group">
+			<input type="date" class="form-control input-sm"
+				th:field="*{dataInicio}" placeholder="data de inicio"
+				style="width: 214px; height: 27px"> <input type="text"
+				th:field="*{mesesDuracao}" placeholder="Duracao"
+				style="width: 191px; height: 27px">
+		</div>
+		</div>
+		<div class="form-group">
+			<select th:field="*{sector}" style="width: 225px; height: 33px">
+				<option value=null>Sector</option>
+				<option value="Privado">Privado</option>
+				<option value="Publico">Publico</option>
+				<option value="ONG">ONG</option>
+				<option value="Associacoes Religiosas">Associacoes
+					Religiosas</option>
+			</select> 
+		</div>
+		
+		<select th:field="*{tipoProjecto}"
+				style="width: 191px; height: 33px">
+				<option value=null>Tipo de Projecto</option>
+				<option value="Agricola">Agricola</option>
+				<option value="Saude">Saude</option>
+				<option value="Banca">Banca</option>
+				<option value="Tecnologias e Informatica">Tecnologias e
+					Informatica</option>
+				<option value="Construcao Civil">Construcao Civil</option>
+
+			</select>
+		
+		
+		
+		</div>
+		<div class="form-group">
+			<textarea th:field="*{parceitros}" placeholder="Parceiros"
+				style="width: 414px;"></textarea>
+		</div>
+		</div>
+		<div class="form-group">
+			<input type="text" placeholder="Orcamento" th:field="*{orcamento}"
+				style="width: 198px; height: 27px"> <select
+				th:field="*{estado}" style="width: 216px; height: 33px">
+				<option value="nulo">Estado</option>
+				<option value="registado">Registado</option>
+				<option value="aberto">Aberto</option>
+				<option value="iniciado">Iniciado</option>
+				<option value="terminado">Terminado</option>
+
+
+			</select>
+		</div>
+		<div class="form-group">
+			<textarea placeholder="Descricao do Projecto" th:field="*{descricao}"
+				style="width: 414px; height: 81px;"></textarea>
+		</div>
+		</div>
+
+		<div class="form-group">
+			<label>Resumo: </label><input type="file" title="Resumo do Projecto"
+				style="width: 200px; height: 38px">
+
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Submeter"
+				style="height: 42px; width: 138px">
+		</div>
+
+
+	</form>
+</body>
+</html>
